@@ -1,0 +1,406 @@
+*,
+*::before,
+*::after {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+    font-size: 10px;
+    color: #fff;
+}
+
+
+
+
+/* -------------------------- Start Main Container -------------------------- */
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #080808;
+}
+
+.container .title__container {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title__container .title {
+    font-size: 4rem;
+}
+
+.title__container .title,
+.title__container h2 {
+    text-transform: uppercase;
+}
+
+.title__container h2 {
+    font-size: 3rem;
+    color: #e2e2e2;
+    letter-spacing: 4px;
+}
+
+.container .gallery__container {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.gallery__container .gallery__items {
+    flex: calc(25% - 5rem);
+    max-width: calc(25% - 5rem);
+    border: 4px solid #fff;
+    height: 40rem;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: .4s;
+}
+
+.gallery__container .gallery__items::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .75);
+    opacity: 0;
+    transition: .4s;
+    z-index: 500;
+}
+
+.gallery__items img {
+    width: 100%;
+    height: 100%;
+    transition: 650ms ease-in-out;
+}
+
+.gallery__items .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    opacity: 0;
+    transition: all .4s;
+    z-index: 600;
+}
+
+.gallery__items .text p {
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.gallery__items:hover img {
+    transform: scale(1.2);
+}
+
+.gallery__items:hover::before,
+.gallery__items:hover .text {
+    opacity: 1;
+}
+
+.gallery__items:hover {
+    border-color: #FA383E;
+}
+/* --------------------------- End Main Container --------------------------- */
+
+
+
+
+
+/* ----------------------------- Start Lightbox ----------------------------- */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .85);
+    z-index: 1500;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.lightbox.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.lightbox__content {
+    width: 70rem;
+    height: 50rem;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.lightbox__items {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+
+
+
+/* Start Main Control */
+.close__btn {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-size: 4.5rem;
+    color: rgba(255, 255, 255, .3);
+    cursor: pointer;
+    transition: 650ms;
+}
+
+.close__btn:hover {
+    color: rgba(255, 255, 255, .8);
+}
+
+.main__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 4.5rem;
+    color: rgba(255, 255, 255, .3);
+    cursor: pointer;
+    transition: 650ms;
+}
+
+.main__button:hover {
+    color: rgba(255, 255, 255, .8);
+}
+
+#main__prev {
+    left: 2rem;
+}
+
+#main__next {
+    right: 2rem;
+}
+/* End Main Control */
+
+
+/* Start Image */
+.lightbox__items .image__side {
+    flex: 0 0 50%;
+    max-width: 50%;
+    height: 100%;
+    display: flex;
+}
+
+.image__side .image {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.image__side .image img  {
+    width: 100%;
+    height: 100%;
+}
+/* End Image */
+
+
+
+/* Start Text Side */
+.lightbox__items .text__side {
+    flex-grow: 1;
+    height: 100%;
+    z-index: 90;
+    background-color: #e2e2e2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text__side p {
+    font-size: 4rem;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    color: #080808;
+}
+/* End Text Side */
+
+
+
+/* Start Controler */
+.controler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 3.5rem;
+}
+
+#prev {
+    left: 1rem;
+}
+
+#next {
+    right: 1rem;
+}
+
+.navigator {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.navigator .dots {
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.navigator .dots:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.navigator .dots.active {
+    border: none;
+    background-color: #3578E5;
+}
+/* End Controler */
+/* ------------------------------ End Lightbox ------------------------------ */
+
+
+
+
+
+/* ---------------------------- Start Responsive ---------------------------- */
+@media screen and (max-width: 900px) {
+    .container {
+        position: relative;
+    }
+
+    .title__container {
+        padding-top: 5rem;
+        margin-bottom: 5rem;
+    }
+
+    .gallery__container {
+        flex-wrap: wrap;
+    }
+
+    .gallery__container .gallery__items {
+        flex: calc(50% - 12rem);
+        max-width: calc(50% - 12rem);
+        margin-bottom: 5rem;
+        height: 45rem;
+    }
+}
+
+@media screen and (max-width: 785px) {
+    .lightbox__content {
+        width: 60rem;
+        height: 40rem;
+    }
+}
+
+@media screen and (max-width: 725px) {
+    .gallery__container .gallery__items {
+        flex: 0 0 100%;
+        max-width: 30rem;
+        height: 40rem;
+    }
+}
+
+@media screen and (max-width: 685px) {
+    .lightbox__content {
+        width: 35rem;
+        height: 50rem;
+    }
+
+    .lightbox__items .image__side {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .lightbox__items .text__side {
+        display: none;
+    }
+
+    .controler {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .title__container .title {
+        font-size: 3rem;
+    }
+
+    .title__container h2 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .title__container .title {
+        font-size: 1.8rem;
+    }
+
+    .title__container h2 {
+        font-size: 1.2rem;
+    }
+
+    .gallery__container .gallery__items {
+        max-width: 25rem;
+        height: 35rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .lightbox__content {
+        width: 30rem;
+        height: 40rem;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .lightbox__content {
+        width: 26rem;
+        height: 36rem;
+    }
+
+    #main__prev {
+        left: 0rem;
+    }
+    
+    #main__next {
+        right: 0rem;
+    }
+}
+/* ----------------------------- End Reponsive ----------------------------- */

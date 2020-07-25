@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Lightbox Nested Slider v2</title>
+
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="title__container">
+                <h1 class="title">Lightbox Nested Slider v2</h1>
+                <h2>Infinite</h2>
+            </div>
+
+            <div class="gallery__container">
+                <div class="gallery__items">
+                    <img src="images/one/1.jpg" alt="">
+                    <div class="text">
+                        <p>F9</p>
+                        <p>The Fast Saga</p>
+                    </div>
+                </div>
+
+                <div class="gallery__items">
+                    <img src="images/two/1.jpg" alt="">
+                    <div class="text">
+                        <p>Money</p>
+                        <p>Heist</p>
+                    </div>
+                </div>
+
+                <div class="gallery__items">
+                    <img src="images/three/1.jpg" alt="">
+                    <div class="text">
+                        <p>Avengers</p>
+                        <p>Endgame</p>
+                    </div>
+                </div>
+
+                <div class="gallery__items">
+                    <img src="images/four/1.jpg" alt="">
+                    <div class="text">
+                        <p>Lucifer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Start Lightbox -->
+        <div class="lightbox">
+            <div class="close__btn" onclick = "toggleLightbox()">
+                <span>&times;</span>
+            </div>
+
+            <div class="main__button" id = "main__prev">
+                <span>&#10094;</span>
+            </div>
+            <div class="main__button" id="main__next">
+                <span>&#10095;</span>
+            </div>
+
+            <div class="lightbox__content">
+                <div class="lightbox__items" id = "slide-one">
+                    <div class="image__side">
+                        <div class="image" id = "last-clone">
+                            <img src="images/one/7.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/one/1.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/one/2.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/one/3.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/one/4.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/one/5.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/one/6.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/one/7.jpg" alt="">
+                        </div>
+
+                        <div class="image" id = "first-clone">
+                            <img src="images/one/1.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="text__side">
+                        <p>F9<br />The Fast Saga</p>
+                    </div>
+
+                    <div class="controler">
+                        <div class="button" id = "prev">
+                            <span>&#10094;</span>
+                        </div>
+                        <div class="button" id = "next">
+                            <span>&#10095;</span>
+                        </div>
+
+                        <div class="navigator">
+                            <div class="dots" data-index = "0"></div>
+                            <div class="dots" data-index = "1"></div>
+                            <div class="dots" data-index = "2"></div>
+                            <div class="dots" data-index = "3"></div>
+                            <div class="dots" data-index = "4"></div>
+                            <div class="dots" data-index = "5"></div>
+                            <div class="dots" data-index = "6"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lightbox__items" id = "slide-two">
+                    <div class="image__side">
+                        <div class="image" id = "last-clone">
+                            <img src="images/two/9.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/two/1.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/two/2.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/two/3.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/two/4.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/two/5.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/two/6.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/two/7.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/two/8.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/two/9.jpg" alt="">
+                        </div>
+
+                        <div class="image" id = "first-clone">
+                            <img src="images/two/1.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="text__side">
+                        <p>Money<br />Heist</p>
+                    </div>
+
+                    <div class="controler">
+                        <div class="button" id="prev">
+                            <span>&#10094;</span>
+                        </div>
+                        <div class="button" id="next">
+                            <span>&#10095;</span>
+                        </div>
+
+                        <div class="navigator">
+                            <div class="dots" data-index = "0"></div>
+                            <div class="dots" data-index = "1"></div>
+                            <div class="dots" data-index = "2"></div>
+                            <div class="dots" data-index = "3"></div>
+                            <div class="dots" data-index = "4"></div>
+                            <div class="dots" data-index = "5"></div>
+                            <div class="dots" data-index = "6"></div>
+                            <div class="dots" data-index = "7"></div>
+                            <div class="dots" data-index = "8"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lightbox__items" id = "slide-three">
+                    <div class="image__side">
+                        <div class="image" id = "last-clone">
+                            <img src="images/three/7.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/three/1.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/three/2.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/three/3.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/three/4.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/three/5.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/three/6.jpg" alt="">
+                        </div>
+
+                        <div class="image">
+                            <img src="images/three/7.jpg" alt="">
+                        </div>
+
+                        <div class="image" id = "first-clone">
+                            <img src="images/three/1.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="text__side">
+                        <p>Avengers<br/>EndGame</p>
+                    </div>
+
+                    <div class="controler">
+                        <div class="button" id="prev">
+                            <span>&#10094;</span>
+                        </div>
+                        <div class="button" id="next">
+                            <span>&#10095;</span>
+                        </div>
+
+                        <div class="navigator">
+                            <div class="dots" data-index = "0"></div>
+                            <div class="dots" data-index = "1"></div>
+                            <div class="dots" data-index = "2"></div>
+                            <div class="dots" data-index = "3"></div>
+                            <div class="dots" data-index = "4"></div>
+                            <div class="dots" data-index = "5"></div>
+                            <div class="dots" data-index = "6"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lightbox__items">
+                    <div class="image__side">
+                        <div class="image">
+                            <img src="images/four/1.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="text__side">
+                        <p>Lucifer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Lightbox -->
+
+        <script src = "js/script.js"></script>
+    </body>
+</html>
